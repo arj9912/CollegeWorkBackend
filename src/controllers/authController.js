@@ -12,16 +12,13 @@ const generateToken = (id) => {
 // Register a new user
 export const register = async (req, res, next) => {
   try {
-    const user = await User.create(req.body);
+    await User.create(req.body);
 
     const token = generateToken(user?.id);
 
     res.status(201).json({
       status: "success",
       token,
-      data: {
-        user,
-      },
     });
   } catch (err) {
     next(err);

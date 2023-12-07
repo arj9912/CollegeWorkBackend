@@ -33,6 +33,7 @@ app.use("/api/v1", indexRouter);
 // Error handler
 app.use(errorHandler);
 
+// Server listening
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
